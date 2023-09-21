@@ -58,6 +58,70 @@ async function question1() {
 	return handleAnswer(answers.question_1 == 'Dec 4th, 1995');
 }
 
+async function question2() {
+	const answers = await inquirer.prompt ({
+		name: 'question_2',
+		type: 'list',
+		message: 'What was the first web browser with a graphical user interface?',
+		choices: [
+			'Internet Explorer',
+			'Netscape',
+			'Lynx',
+			'Mosaic'
+		],
+	});
+
+	return handleAnswer(answers.question_2 == 'Mosaic');
+}
+
+async function question3() {
+	const answers = await inquirer.prompt ({
+		name: 'question_3',
+		type: 'list',
+		message: 'What year was JScript released in conjunction with initial support for HTML and CSS?',
+		choices: [
+			'1994',
+			'1995',
+			'1996',
+			'1997'
+		],
+	});
+
+	return handleAnswer(answers.question_3 == '1995');
+}
+
+async function question4(){
+	const answers = await inquirer.prompt ({
+		name: 'question_4',
+		type: 'list',
+		message: 'What entity owns the JavaScript trademark?',
+		choices: [
+			'Microsoft',
+			'Google',
+			'Oracle',
+			'IBM'
+		],
+	});
+
+	return handleAnswer(answers.question_4 == 'Oracle');
+}
+
+async function question5() {
+	const answers = await inquirer.prompt ({
+		name: 'question_5',
+		type: 'list',
+		message: 'What percent of websites use JavaScript as their client-side scripting language? (circa 2022)',
+		choices: [
+			'98%',
+			'97%',
+			'96%',
+			'99%'
+		],
+	});
+
+	return handleAnswer(answers.question_5 == '98%');
+}
+
 async function handleAnswer(isCorrect) {
 	const spinner = createSpinner('Checking answer...').start();
 	await sleep();
@@ -79,7 +143,12 @@ function winner() {
 	});
 }
 
+
 await welcome();
 await askName();
 await question1();
+await question2();
+await question3();
+await question4();
+await question5();
 await winner();
