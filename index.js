@@ -55,7 +55,7 @@ async function question1() {
 		],
 	});
 
-	return handleAnswer(answers.question_1) == 'Dec 4th, 1995';
+	return handleAnswer(answers.question_1 == 'Dec 4th, 1995');
 }
 
 async function handleAnswer(isCorrect) {
